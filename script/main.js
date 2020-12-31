@@ -10,23 +10,30 @@ var mySwiper = new Swiper('.swiper-container', {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-  
-
   })
 
+  $('.header__nav-link').click(function(e) {
+    e.preventDefault();
+    let attr =  $(this).attr('href'),
+        toEl = $(attr).offset().top
+        $('html,body').animate({
+            scrollTop: toEl
+        },{
+            duration: 1000
+        })
+})
 
 
-
-
-
-
-
-
-
-
-
-
-
+$('#up').click(function(e) {
+  e.preventDefault(); 
+  setTimeout(() => {
+      $('html,body').animate({
+          scrollTop: 0
+      },{
+          duration: 1000
+      })
+  }, 250)
+})
 
 
 
